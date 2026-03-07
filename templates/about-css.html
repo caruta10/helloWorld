@@ -3,23 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>About Me</title>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
     <!-- Header section with logo and main title -->
-    <img src="https://terpconnect.umd.edu/~jbono/bmgt407/images/smith-logo.png" width="200" height="50" alt="Robert H. Smith School of Business Logo">
+    <img class="logo" src="https://terpconnect.umd.edu/~jbono/bmgt407/images/smith-logo.png" alt="Robert H. Smith School of Business Logo">
 
     <h1>About Me</h1>
 
     <!-- Introduction section -->
     <h2>Introduction</h2>
-    <p>Hello! My name is <strong>Caden Aruta</strong>and I am a student at the <em>University of Maryland</em>. I am studying Information Systems at the Robert H. Smith School of Business.</p>
+    <p>Hello! My name is <strong>Caden Aruta</strong> and I am a student at the <em>University of Maryland</em>. I am studying Information Systems at the Robert H. Smith School of Business.</p>
 
     <p>I enjoy <strong>learning new technologies</strong> and building <em>web applications</em>. Explore this page to learn more about me.</p>
 
@@ -30,7 +25,7 @@
     <ul>
         <li>Hiking</li>
         <li>Reading</li>
-        <li>Traveling</li>
+        <li class="highlight">Traveling</li>
     </ul>
 
     <p>My goals for this semester:</p>
@@ -39,6 +34,9 @@
         <li>Learn Flask development</li>
         <li>Build this website</li>
     </ol>
+
+    <!-- Third paragraph with id attribute -->
+    <p id="special-paragraph">I am passionate about combining business knowledge with technical skills. The Information Systems program at UMD has given me the opportunity to learn both the strategic and practical aspects of technology in business.</p>
 
     <!-- Course table section -->
     <h2>Courses Taken</h2>
