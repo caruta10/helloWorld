@@ -1,0 +1,54 @@
+/* Paragraph styling */
+p {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+/*  Level 2 header styling  */
+h2 {
+    color: #c8102e;
+    border-bottom: 2px solid #c8102e;
+    padding-bottom: 5px;
+    font-family: Georgia, serif;
+}
+
+/* Table styling with border and border color */
+table {
+    border: 2px solid #c8102e;
+    border-collapse: collapse;
+    width: 50%;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #c8102e;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #c8102e;
+    color: white;
+}
+
+/* ID selector for the third paragraph */
+#special-paragraph {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-left: 4px solid #c8102e;
+    font-style: italic;
+}
+
+
+.highlight {
+    font-weight: bold;
+    color: #c8102e;
+}
+
+/* Named CSS rule block for img tags */
+img.logo {
+    width: 200px;
+    height: 50px;
+}
