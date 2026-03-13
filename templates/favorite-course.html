@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Favorite Course{% endblock %}
+
+{% block header %}Favorite Course{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Look Up a Course</h5>
+                <p class="card-text text-muted">Enter a course subject and number in the URL to see your favorite course.</p>
+                <p class="mb-1"><strong>Example URL format:</strong></p>
+                <code>/favorite-course?subject=BMGT&amp;course_number=407</code>
+            </div>
+        </div>
+
+        {% if subject and course_number %}
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Course Found!</h4>
+            <p class="mb-0">You entered your favorite course as: <strong>{{ subject }} {{ course_number }}</strong></p>
+        </div>
+        {% elif subject or course_number %}
+        <div class="alert alert-warning" role="alert">
+            Please provide both a <strong>subject</strong> and a <strong>course_number</strong> in the URL.
+        </div>
+        {% else %}
+        <div class="alert alert-info" role="alert">
+            No course entered yet. Try adding <code>?subject=BMGT&amp;course_number=407</code> to the URL above.
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}
