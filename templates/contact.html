@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %}Contact{% endblock %}
+{% block page_title %}Contact{% endblock %}
 
-{% block header %}Contact{% endblock %}
+{% block page_head %}Contact{% endblock %}
 
-{% block content %}
+{% block page_content %}
     {% if submitted %}
         <p>Thank you, {{ first_name }}! Here is what you submitted:</p>
         <p>First Name: {{ first_name }}</p>

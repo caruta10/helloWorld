@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %}Favorite Course{% endblock %}
+{% block page_title %}Favorite Course{% endblock %}
 
-{% block header %}Favorite Course{% endblock %}
+{% block page_head %}Favorite Course{% endblock %}
 
-{% block content %}
+{% block page_content %}
     {% if subject and course_number %}
         <p>You entered your favorite course as: {{ subject }} {{ course_number }}</p>
     {% else %}

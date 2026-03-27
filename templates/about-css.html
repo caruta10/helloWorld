@@ -1,26 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About Me</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
 
-    <!-- Header section with logo and main title -->
+{% block page_title %}About Me{% endblock %}
+
+{% block page_head %}About Me{% endblock %}
+
+{% block page_content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
     <img class="logo" src="https://terpconnect.umd.edu/~jbono/bmgt407/images/smith-logo.png" alt="Robert H. Smith School of Business Logo">
 
-    <h1>About Me</h1>
-
-    <!-- Introduction section -->
     <h2>Introduction</h2>
     <p>Hello! My name is <strong>Caden Aruta</strong> and I am a student at the <em>University of Maryland</em>. I am studying Information Systems at the Robert H. Smith School of Business.</p>
-
     <p>I enjoy <strong>learning new technologies</strong> and building <em>web applications</em>. Explore this page to learn more about me.</p>
 
-    <!-- Interests section with lists -->
     <h2>My Interests</h2>
-
     <p>Here are some of my hobbies:</p>
     <ul>
         <li>Hiking</li>
@@ -35,34 +28,18 @@
         <li>Build this website</li>
     </ol>
 
-    <!-- Third paragraph with id attribute -->
     <p id="special-paragraph">I am passionate about combining business knowledge with technical skills. The Information Systems program at UMD has given me the opportunity to learn both the strategic and practical aspects of technology in business.</p>
 
-    <!-- Course table section -->
     <h2>Courses Taken</h2>
     <table>
-        <tr>
-            <th>Course</th>
-            <th>Semester</th>
-        </tr>
-        <tr>
-            <td>BMGT407</td>
-            <td>Spring 2026</td>
-        </tr>
-        <tr>
-            <td>BMGT301</td>
-            <td>Fall 2024</td>
-        </tr>
-        <tr>
-            <td>BMGT302</td>
-            <td>Spring 2025</td>
-        </tr>
+        <tr><th>Course</th><th>Semester</th></tr>
+        <tr><td>BMGT407</td><td>Spring 2026</td></tr>
+        <tr><td>BMGT301</td><td>Fall 2024</td></tr>
+        <tr><td>BMGT302</td><td>Spring 2025</td></tr>
     </table>
 
     <h2>Links</h2>
     <p><a href="/hello">Go to Hello Page</a></p>
     <p><a href="https://www.google.com">Google</a></p>
     <p><a href="https://www.github.com" target="_blank">GitHub (opens in new tab)</a></p>
-
-</body>
-</html>
+{% endblock %}
