@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}{{ "Update" if action == "update" else "Add New" }} Student{% endblock %}
+{% block header %}{{ "Update" if action == "update" else "Add New" }} Student{% endblock %}
+{% block content %}
+    <form method="POST">
+        <div class="row mb-3">
+            <div class="col">
+                <label for="first_name" class="form-label"><strong>First Name</strong></label>
+                <input type="text" class="form-control" id="first_name" name="first_name"
+                    maxlength="30" required value="{{ student.first_name if student else '' }}">
+            </div>
+            <div class="col">
+                <label for="last_name" class="form-label"><strong>Last Name</strong></label>
+                <input type="text" class="form-control" id="last_name" name="last_name"
+                    maxlength="50" required value="{{ student.last_name if student else '' }}">
+            </div>
+            <div class="col">
+                <label for="birth_date" class="form-label"><strong>Birth Date</strong></label>
+                <input type="date" class="form-control" id="birth_date" name="birth_date"
+                    required value="{{ student.birth_date if student else '' }}">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="major" class="form-label"><strong>Major</strong></label>
+                <select class="form-control" id="major" name="major" required>
+                    <option value="">---Select A Major---</option>
+                    {% for m in ["Accounting","Finance","Information Systems","Management","Marketing"] %}
+                        <option value="{{ m }}" {{ "selected" if student and student.major == m else "" }}>{{ m }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col">
+                <label for="credits_completed" class="form-label"><strong>Number of Credits Completed</strong></label>
+                <input type="number" class="form-control" id="credits_completed" name="credits_completed"
+                    min="0" required value="{{ student.credits_completed if student else 0 }}">
+            </div>
+            <div class="col">
+                <label for="gpa" class="form-label"><strong>GPA</strong></label>
+                <input type="number" class="form-control" id="gpa" name="gpa"
+                    min="0" max="4" step="0.01" required value="{{ student.gpa if student else '0.0' }}">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="email" class="form-label"><strong>Email</strong></label>
+                <input type="email" class="form-control" id="email" name="email" maxlength="100"
+                    required value="{{ student.email if student else '' }}">
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="is_honors" name="is_honors"
+                    {{ "checked" if student and student.is_honors else "" }}>
+                <label class="form-check-label" for="is_honors">Is this an honors student?</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">
+            {{ "Update Student" if action == "update" else "Add Student" }}
+        </button>
+        <a href="/student/view" class="btn btn-secondary">Cancel</a>
+    </form>
+{% endblock %}
