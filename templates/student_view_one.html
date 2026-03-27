@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}View Student{% endblock %}
+{% block header %}View Student{% endblock %}
+{% block content %}
+    <div class="row mb-3">
+        <div class="col"><strong>First Name</strong><br>{{ student.first_name }}</div>
+        <div class="col"><strong>Last Name</strong><br>{{ student.last_name }}</div>
+        <div class="col"><strong>Birth Date</strong><br>{{ student.birth_date }}</div>
+    </div>
+    <div class="row mb-3">
+        <div class="col"><strong>Major</strong><br>{{ student.major }}</div>
+        <div class="col"><strong>Number of Credits Completed</strong><br>{{ student.credits_completed }}</div>
+        <div class="col"><strong>GPA</strong><br>{{ student.gpa }}</div>
+    </div>
+    <div class="row mb-3">
+        <div class="col"><strong>Email</strong><br>{{ student.email }}</div>
+        <div class="col"><strong>Is this an honors student?</strong><br>{{ "Yes" if student.is_honors else "No" }}</div>
+    </div>
+    <a href="/student/view" class="btn btn-secondary">Return</a>
+{% endblock %}
